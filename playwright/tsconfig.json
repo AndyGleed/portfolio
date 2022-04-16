@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "commonjs",
+    "moduleResolution": "Node",
+    "sourceMap": true,
+    "outDir": "build"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["build", "node_modules", "playwright-report", "test-results", ".vscode", ".github"]
+}

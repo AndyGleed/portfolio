@@ -1,0 +1,22 @@
+{
+  "name": "xenforo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "build": "tsc --incremental -p tsconfig.json"
+  },
+  "keywords": [],
+  "author": "Andy Gleed",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.21.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "nodejs-base64": "^2.0.0",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  }
+}

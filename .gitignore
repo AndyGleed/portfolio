@@ -1,0 +1,5 @@
+playwright/build
+playwright/.vscode
+playwright/node_modules
+playwright/test-results
+playwright/playwright-report
