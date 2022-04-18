@@ -1,6 +1,6 @@
 import { Page } from '@playwright/test';
-import { HomePageLocators as Locators } from '../locators/home';
-import { BasePage } from './basePage';
+import { HomePageLocators as Locators } from '../locators/pages/homePageLocators';
+import { BasePage } from "../../internals";
 
 export class HomePage extends BasePage {
   private readonly _locators: Locators;

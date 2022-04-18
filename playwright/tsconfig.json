@@ -6,6 +6,15 @@
     "sourceMap": true,
     "outDir": "build"
   },
-  "include": ["src/**/*"],
-  "exclude": ["build", "node_modules", "playwright-report", "test-results", ".vscode", ".github"]
+  "include": [
+    "src/**/*.ts",
+    "tests/**/*.ts"
+  ],
+  "exclude": [
+    "build", 
+    "node_modules", 
+    "playwright-report", 
+    "test-results", 
+    ".vscode", 
+    ".github"]
 }
