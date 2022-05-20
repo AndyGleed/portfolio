@@ -24,6 +24,7 @@ export class LoginPage extends BasePage {
   async login(username: string, password: string) {
     await this.setUsername(username);
     await this.setPassword(password);
+    await this.clickRememberMe();
     await this.clickLogin();
   }
 
@@ -37,5 +38,9 @@ export class LoginPage extends BasePage {
 
   async clickLogin() {
     await this.locators.btnLogin.click();
+  }
+
+  async clickRememberMe() {
+    await this.locators.chkRememberMe.setChecked(true);
   }
 }

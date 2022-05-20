@@ -6,8 +6,8 @@ import { devices } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration.
  */
 const config: PlaywrightTestConfig = {
-  testDir: './tests',
   /* Maximum time one test can run for. */
+  reporter: 'list',
   timeout: 30 * 1000,
   expect: {
     /**
@@ -22,7 +22,6 @@ const config: PlaywrightTestConfig = {
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
-  reporter: 'line',
   use: {
     actionTimeout: 1000,
     baseURL: process.env.BASE_URL,
