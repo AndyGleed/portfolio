@@ -1,7 +1,7 @@
 .vscode
-node_modules
-build
-playwright-report
+node_modules/
+build/
+playwright-report/
 package-lock.json
 test-results/
 traces/

@@ -5,9 +5,9 @@ import { SearchComponent } from './search';
 
 export class Components {
   private readonly _page: Page;
-  private _navBar: NavBarComponent;
-  private _memberAccountNavigation: MemberAccountNavigation;
-  private _search: SearchComponent;
+  private _navBar!: NavBarComponent;
+  private _memberAccountNavigation!: MemberAccountNavigation;
+  private _search!: SearchComponent;
 
   constructor(page: Page) {
     this._page = page;

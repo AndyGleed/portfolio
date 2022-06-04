@@ -1,4 +1,4 @@
-import test, { expect } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import { base64decode } from 'nodejs-base64';
 import { Components } from '../src/components/components';
 import { Users } from '../src/data/users/users';
@@ -15,17 +15,19 @@ test.describe('Login Tests', () => {
   });
 
   test('login as Joe', async ({ page }) => {
-    await pages.homePage.clickLogin();
-    await pages.loginPage.login(base64decode(Users.getJoe().email), base64decode(Users.getJoe().password));
-    await comps.memberAccountNavigation.verifyLoggedInUserName(base64decode(Users.getJoe().name));
-    await pages.homePage.logout(base64decode(Users.getJoe().name));
+    await pages.home.clickLogin();
+    await pages.login.login(base64decode(Users.joe.email), base64decode(Users.joe.password));
+    await comps.memberAccountNavigation.verifyLoggedInUserName(base64decode(Users.joe.name));
+    expect(await pages.forumList.locators.categories.count()).toEqual(1);
+    expect(await pages.forumList.locators.categories.nth(0).textContent()).toEqual('Playwright Automation Testing');
+    await pages.home.logout(base64decode(Users.joe.name));
   });
 
-  test('login as John', async ({ page }) => {
+  test.skip('login as John', async ({ page }) => {
     const pages: Pages = new Pages(page);
-    await pages.homePage.clickLogin();
-    await pages.loginPage.login(base64decode(Users.getJohn().email), base64decode(Users.getJohn().password));
-    await comps.memberAccountNavigation.verifyLoggedInUserName(base64decode(Users.getJohn().name));
-    await pages.homePage.logout(base64decode(Users.getJohn().name));
+    await pages.home.clickLogin();
+    await pages.login.login(base64decode(Users.john.email), base64decode(Users.john.password));
+    await comps.memberAccountNavigation.verifyLoggedInUserName(base64decode(Users.john.name));
+    await pages.home.logout(base64decode(Users.john.name));
   });
 });

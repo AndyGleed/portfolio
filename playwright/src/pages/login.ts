@@ -1,6 +1,6 @@
 import { Page } from '@playwright/test';
 import { LoginPageLocators as Locators } from '../locators/pages/loginPageLocators';
-import { BasePage } from "../../internals";
+import { BasePage } from '../../internals';
 
 export class LoginPage extends BasePage {
   private readonly _locators: Locators;
@@ -25,7 +25,7 @@ export class LoginPage extends BasePage {
     await this.setUsername(username);
     await this.setPassword(password);
     await this.clickRememberMe();
-    await this.clickLogin();
+    await Promise.all([this._page.waitForNavigation(), this.clickLogin()]);
   }
 
   async setUsername(username: string) {
